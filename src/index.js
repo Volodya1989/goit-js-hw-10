@@ -6,7 +6,6 @@ Notiflix.Notify.init({
   timeout: 3000,
 });
 
-("use strict");
 const DEBOUNCE_DELAY = 300;
 let nameOfTheSearchedCountry = null;
 
