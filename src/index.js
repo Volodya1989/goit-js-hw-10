@@ -32,10 +32,6 @@ function markupForOneCountry(data) {
     .join("");
 }
 
-function appendingOneCountry(data, callback) {
-  listOfCountries.insertAdjacentHTML("afterbegin", callback(data));
-}
-
 function markupOfListOfCountries(data) {
   const markup = data
     .map(({ flags, name }) => {
