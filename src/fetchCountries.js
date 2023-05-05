@@ -27,7 +27,7 @@ function fetchCountries(name, element) {
       } else if (data.length === 1) {
         element.innerHTML = "";
         const markup = data
-          .map(({ flags, name, capital, population, languages }) => {
+            .map(({ flags, name, capital, population, languages }) => {
             return `<li class="item"><img class="img-item" src=${
               flags.svg
             } alt="flag"  > <p class="country"><strong>${
@@ -35,7 +35,7 @@ function fetchCountries(name, element) {
             }</strong></p></h4></li>
             <li class="item"><strong>Capital:</strong> ${capital}</li> <li class="item"><strong>Population:</strong> ${population}</li><li class="item"><strong>Languages:</strong> ${Object.values(
               languages
-            )}</li>`;
+            ).join(", ")}</li>`;
           })
           .join("");
 
