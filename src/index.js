@@ -7,7 +7,6 @@ Notiflix.Notify.init({
 });
 
 const DEBOUNCE_DELAY = 300;
-let nameOfTheSearchedCountry = null;
 
 const inputEl = document.querySelector("input#search-box");
 const listOfCountries = document.querySelector("ul.country-list");
@@ -46,7 +45,10 @@ function onInfoNotification() {
   );
 }
 function onInput(e) {
-  nameOfTheSearchedCountry = e.target.value.trim();
+  const nameOfTheSearchedCountry = e.target.value.trim();
+  if (!nameOfTheSearchedCountry) {
+    return;
+  }
 
   API.fetchCountries(nameOfTheSearchedCountry, listOfCountries)
     .then((data) => {
